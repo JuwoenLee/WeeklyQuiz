@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class OrderService {
+    Calculator
+}
+class Calculator
+class Cart {
+    Product[] products
+}
+
+interface Promotion
+
+class Product implements Promotion
+class Beauty extends Product
+class LargeAppliance extends Product
+class Grocery extends Product
+
+@enduml

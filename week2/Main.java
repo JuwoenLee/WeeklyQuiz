@@ -1,13 +1,15 @@
 package week2;
 
+import java.math.BigDecimal;
+
 public class Main {
     public static void main(String[] args) {
-        Beauty beauty = new Beauty("화장품", 1000, 1);
-        Grocery grocery = new Grocery("식료품", 30000, 3);
-        LargeAppliance largeAppliance = new LargeAppliance("대형가전", 100000, 10);
+        Beauty beauty = new Beauty("beauty", BigDecimal.valueOf(30000), 2);
+        Grocery grocery = new Grocery("grocery", BigDecimal.valueOf(20000), 3);
+        LargeAppliance largeAppliance = new LargeAppliance("largeAppliance", BigDecimal.valueOf(50000),5);
 
-        System.out.println("립스틱 : " + beauty.getDeliveryCharge(beauty.getWeight(), beauty.getPrice()));
-        System.out.println("식료품 : " + grocery.getDeliveryCharge(grocery.getWeight(), grocery.getPrice()));
-        System.out.println("대형가전 : " + largeAppliance.getDeliveryCharge(largeAppliance.getWeight(), largeAppliance.getPrice()));
+        Cart cart = new Cart(new Product[] {beauty, grocery, largeAppliance});
+        BigDecimal totalDeliveryCharge = cart.calculateDeliveryCharge();
+        System.out.println(totalDeliveryCharge);
     }
 }
