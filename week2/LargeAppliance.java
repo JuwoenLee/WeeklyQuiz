@@ -15,5 +15,4 @@ public class LargeAppliance extends Product {
     public double getWeight() {
         return weight;
     }
-
 }

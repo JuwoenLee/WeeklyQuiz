@@ -1,7 +1,5 @@
 package week2;
 
-import week2.util.Calculator;
-
 import java.math.BigDecimal;
 
 public class Beauty extends Product {
@@ -15,6 +13,11 @@ public class Beauty extends Product {
 
     public double getWeight() {
         return weight;
+    }
+
+    @Override
+    public BigDecimal getDiscountAmount() {
+        return BigDecimal.valueOf(10000);
     }
 
 }

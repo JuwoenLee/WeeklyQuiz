@@ -2,7 +2,7 @@ package week2;
 
 import java.math.BigDecimal;
 
-public class Grocery extends Product {
+public class Grocery extends Product{
 
     Grocery(String name, BigDecimal price, double weight) {
         super(name, price, weight);
@@ -14,6 +14,11 @@ public class Grocery extends Product {
 
     public double getWeight() {
         return weight;
+    }
+
+    @Override
+    public BigDecimal getDiscountAmount() {
+        return BigDecimal.valueOf(2000);
     }
 
 }

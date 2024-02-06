@@ -21,13 +21,9 @@ public class Product implements Promotion {
         return this.weight;
     }
 
+
     @Override
     public BigDecimal getDiscountAmount() {
-        if(this.name.equals("beauty")) {
-            return BigDecimal.valueOf(10000);
-        } else if(this.name.equals("grocery")) {
-            return BigDecimal.valueOf(2000);
-        }
         return BigDecimal.ZERO;
     }
 }

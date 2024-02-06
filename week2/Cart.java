@@ -11,12 +11,13 @@ public class Cart {
         this.products = products;
     }
 
-    public BigDecimal getTotalPrice() {
-        BigDecimal total = BigDecimal.ZERO;
+    public BigDecimal getPriceIncludeDiscount() {
+        BigDecimal totalDiscountPrice = BigDecimal.ZERO;
         for(Product product : products) {
-            total  = total.add(product.price);
+            BigDecimal price = product.price.subtract(product.getDiscountAmount());
+            totalDiscountPrice = totalDiscountPrice.add(price);
         }
-        return total;
+        return totalDiscountPrice;
     }
 
     public double getTotalWeight() {
@@ -29,6 +30,6 @@ public class Cart {
 
     public BigDecimal calculateDeliveryCharge() {
 
-        return Calculator.getDeliveryCharge(getTotalWeight(), getTotalPrice());
+        return Calculator.getDeliveryCharge(getTotalWeight(), getPriceIncludeDiscount());
     }
 }
