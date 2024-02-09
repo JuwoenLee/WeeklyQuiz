@@ -1,8 +1,12 @@
 package addressManagementSystem.src;
 
 public class Contact {
-    private String name;
-    private String phoneNumber;
+    protected String name;
+    protected String phoneNumber;
+
+    Contact() {
+
+    }
 
     Contact(String name, String phoneNumber) {
         this.name = name;
@@ -16,5 +20,10 @@ public class Contact {
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
+
+    public String getProperty() {
+        return "";
+    }
+
 
 }

@@ -6,6 +6,9 @@ public class Constant {
     public static final String SEARCH_NAME_MESSAGE = "검색할 이름을 입력하세요 : ";
     public static final String EMPTY_ADDRESS_BOOK_MESSAGE = "연락처가 비어있습니다.";
     public static final String NOT_FOUND_MESSAGE = "연락처를 찾을 수 없습니다.";
+
+    public static final String INPUT_COMPANY_MESSAGE = "회사명을 입력하세요 : ";
+    public static final String INPUT_RELATIONSHIP_MESSAGE = "관계를 입력하세요 : ";
     public static final String PRINT_NAME = "이름 : ";
     public static final String PRINT_PHONE_NUMBER = "전화번호 : ";
     public static final String PRINT_COMPANY = "회사명 : ";
@@ -38,10 +41,8 @@ public class Constant {
     }
 
     public enum AddContactMessage {
-        INPUT_NAME_MESSAGE("이름을 입력하세요: "),
-        INPUT_PHONE_NUMBER_MESSAGE("전화번호를 입력하세요: "),
-        INPUT_COMPANY_MESSAGE("회사명을 입력하세요 : "),
-        INPUT_RELATIONSHIP_MESSAGE("관계를 입력하세요 :");
+        INPUT_NAME_MESSAGE("이름을 입력하세요 : "),
+        INPUT_PHONE_NUMBER_MESSAGE("전화번호를 입력하세요 : ");
 
         private final String message;
 

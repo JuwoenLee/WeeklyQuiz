@@ -15,16 +15,17 @@ public class Main {
             System.out.println(initMessage.getOrder() + ". " + initMessage.getMessage());
         }
         System.out.print(CHOOSE_MENU_MESSAGE);
-
         Scanner scan = new Scanner(System.in);
 
         while(flag) {
             int menu = scan.nextInt();
             if(menu >= 1 && menu <= 5) {
                 if (menu == InitMessages.ADD_BUSINESS_CONTACT_MESSAGE.getOrder()) {
-                    addressBook.addContact(new BusinessContact("오르미", "2", "3"));
+                    Contact businessContact = BusinessContact.getNewContact();
+                    addressBook.addContact(businessContact);
                 } else if (menu == InitMessages.ADD_PERSONAL_CONTACT_MESSAGE.getOrder()) {
-                    addressBook.addContact(new PersonalContact("오름이", "5", "6"));
+                    Contact personalContact = PersonalContact.getNewContact();
+                    addressBook.addContact(personalContact);
                 } else if (menu == InitMessages.PRINT_CONTACT_MESSAGE.getOrder()) {
                     AddressBook.displayContacts();
                 } else if (menu == InitMessages.SEARCH_CONTACT_MESSAGE.getOrder()) {
@@ -34,8 +35,14 @@ public class Main {
 
                 } else if (menu == InitMessages.EXIT_MESSAGE.getOrder()) {
                     flag = !flag;
+                    System.exit(0);
                 }
             }
+            System.out.println();
+            for(InitMessages initMessage : InitMessages.values()) {
+                System.out.println(initMessage.getOrder() + ". " + initMessage.getMessage());
+            }
+            System.out.print(CHOOSE_MENU_MESSAGE);
         }
     }
 }
