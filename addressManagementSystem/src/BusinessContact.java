@@ -11,16 +11,12 @@ public class BusinessContact extends Contact {
     BusinessContact() {
 
     }
-    public BusinessContact(String name, String phoneNumber, String company) {
-        super(name, phoneNumber);
-        this.company = company;
-    }
 
     public String getCompany() {
         return this.company;
     }
 
-    public static Contact getNewContact() {
+    public static Contact setNewContact() {
         Scanner scan = new Scanner(System.in);
         BusinessContact businessContact = new BusinessContact();
 

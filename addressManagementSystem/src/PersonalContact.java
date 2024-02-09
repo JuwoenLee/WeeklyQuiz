@@ -12,16 +12,11 @@ public class PersonalContact extends Contact {
 
     }
 
-    public PersonalContact(String name, String phoneNumber, String relationship) {
-        super(name, phoneNumber);
-        this.relationship = relationship;
-    }
-
     public String getRelationship() {
         return this.relationship;
     }
 
-    public static Contact getNewContact() {
+    public static Contact setNewContact() {
         Scanner scan = new Scanner(System.in);
         PersonalContact personalContact = new PersonalContact();
 

@@ -28,12 +28,12 @@ public class Controller {
 
             switch(menu) {
                 case 1 :
-                    Contact businessContact = BusinessContact.getNewContact();
+                    Contact businessContact = BusinessContact.setNewContact();
                     addressBook.addContact(businessContact);
                     break;
 
                 case 2 :
-                    Contact personalContact = PersonalContact.getNewContact();
+                    Contact personalContact = PersonalContact.setNewContact();
                     addressBook.addContact(personalContact);
                     break;
 
@@ -46,7 +46,7 @@ public class Controller {
                     break;
 
                 case 5 :
-                    isRun = !isRun;
+                    isRun = false;
                     break;
             }
         }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 import static addressManagementSystem.Constant.*;
 
 public class AddressBook {
-    private static ArrayList<Contact> contacts = new ArrayList<>();
+    private static final ArrayList<Contact> contacts = new ArrayList<>();
 
     public AddressBook() {
 
