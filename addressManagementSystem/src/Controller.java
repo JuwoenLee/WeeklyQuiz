@@ -38,11 +38,11 @@ public class Controller {
                     break;
 
                 case 3 :
-                    AddressBook.displayContacts();
+                    addressBook.displayContacts();
                     break;
 
                 case 4 :
-                    AddressBook.searchContact();
+                    addressBook.searchContact();
                     break;
 
                 case 5 :
