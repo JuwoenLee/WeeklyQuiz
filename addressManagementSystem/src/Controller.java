@@ -20,34 +20,33 @@ public class Controller {
         AddressBook addressBook = new AddressBook();
         boolean isRun = true;
 
-        while(isRun) {
-            printInitMessages();
+        try(Scanner scan = new Scanner(System.in)) {
+            while (isRun) {
+                printInitMessages();
 
-            Scanner scan = new Scanner(System.in);
-            int menu = scan.nextInt();
+                switch (scan.nextInt()) {
+                    case 1:
+                        Contact businessContact = BusinessContact.setNewContact();
+                        addressBook.addContact(businessContact);
+                        break;
 
-            switch(menu) {
-                case 1 :
-                    Contact businessContact = BusinessContact.setNewContact();
-                    addressBook.addContact(businessContact);
-                    break;
+                    case 2:
+                        Contact personalContact = PersonalContact.setNewContact();
+                        addressBook.addContact(personalContact);
+                        break;
 
-                case 2 :
-                    Contact personalContact = PersonalContact.setNewContact();
-                    addressBook.addContact(personalContact);
-                    break;
+                    case 3:
+                        addressBook.displayContacts();
+                        break;
 
-                case 3 :
-                    addressBook.displayContacts();
-                    break;
+                    case 4:
+                        System.out.print(SEARCH_NAME_MESSAGE);
+                        addressBook.searchContact(scan.next());
+                        break;
 
-                case 4 :
-                    addressBook.searchContact();
-                    break;
-
-                case 5 :
-                    isRun = false;
-                    break;
+                    case 5:
+                        isRun = false;
+                }
             }
         }
     }
