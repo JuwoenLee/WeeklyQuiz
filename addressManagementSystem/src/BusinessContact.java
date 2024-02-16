@@ -2,8 +2,10 @@ package addressManagementSystem.src;
 
 import java.util.Scanner;
 
-import static addressManagementSystem.Constant.*;
-import static addressManagementSystem.Constant.AddContactMessage.*;
+import static addressManagementSystem.Constant.AddContactMessage.INPUT_NAME_MESSAGE;
+import static addressManagementSystem.Constant.AddContactMessage.INPUT_PHONE_NUMBER_MESSAGE;
+import static addressManagementSystem.Constant.INPUT_COMPANY_MESSAGE;
+import static addressManagementSystem.Constant.PRINT_COMPANY;
 
 public class BusinessContact extends Contact {
     private String company;
@@ -27,6 +29,12 @@ public class BusinessContact extends Contact {
 
         System.out.print(INPUT_PHONE_NUMBER_MESSAGE.getMessage());
         phoneNumber = scan.next();
+
+        boolean isMatch = pattern.matcher(phoneNumber).find();
+        if (!isMatch) {
+            System.out.println("잘못된 전화번호 형식입니다.");
+            return null;
+        }
 
         BusinessContact businessContact = new BusinessContact(name, phoneNumber);
 

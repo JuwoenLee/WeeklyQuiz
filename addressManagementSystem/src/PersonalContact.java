@@ -30,6 +30,12 @@ public class PersonalContact extends Contact {
         System.out.print(INPUT_PHONE_NUMBER_MESSAGE.getMessage());
         phoneNumber = scan.next();
 
+        boolean isMatch = pattern.matcher(phoneNumber).find();
+        if (!isMatch) {
+            System.out.println("잘못된 전화번호 형식입니다.");
+            return null;
+        }
+
         PersonalContact personalContact = new PersonalContact(name, phoneNumber);
 
         System.out.print(INPUT_RELATIONSHIP_MESSAGE);
